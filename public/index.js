@@ -6187,7 +6187,7 @@ function _asyncToGenerator(n) { return function () { var t = this, e = arguments
 var form = document.getElementById("registerForm");
 form.addEventListener("submit", /*#__PURE__*/function () {
   var _ref = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee(event) {
-    var username, email, date_of_birth, res, _error$response, _t;
+    var username, email, date_of_birth, res, _t;
     return _regenerator().w(function (_context) {
       while (1) switch (_context.p = _context.n) {
         case 0:
@@ -6211,7 +6211,8 @@ form.addEventListener("submit", /*#__PURE__*/function () {
         case 3:
           _context.p = 3;
           _t = _context.v;
-          document.getElementById("errorMsg").textContent = ((_error$response = _t.response) === null || _error$response === void 0 || (_error$response = _error$response.data) === null || _error$response === void 0 ? void 0 : _error$response.message) || "Something went wrong";
+          document.getElementById("errorMsg").textContent = _t.response.data.message || "Something went wrong";
+          console.log(_t.response.data);
         case 4:
           return _context.a(2);
       }

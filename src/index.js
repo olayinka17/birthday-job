@@ -20,6 +20,7 @@ form.addEventListener("submit", async function (event) {
     form.reset();
   } catch (error) {
     document.getElementById("errorMsg").textContent =
-      error.response?.data?.message || "Something went wrong";
+      error.response.data.message || "Something went wrong";
+    console.log(error.response.data)
   }
 });
