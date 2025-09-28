@@ -9,9 +9,9 @@ const birthdays = async () => {
 
   try {
     const users = await User.find({ Month: month, Day: day });
-    users.forEach((user) => {
-      new Email(user).sendEmail();
-    });
+    await Promise.all(
+      users.map((user) => new Email(user).sendEmail())
+    );
   } catch (err) {
     console.log(err);
   }
