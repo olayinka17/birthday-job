@@ -15,7 +15,7 @@ const birthdays = async () => {
   }
 };
 
-schedule.scheduleJob("* * * * *", () => {
+schedule.scheduleJob("0 7 * * *", () => {
   console.log("job starting......");
   birthdays();
 });
