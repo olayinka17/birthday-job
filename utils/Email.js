@@ -14,7 +14,7 @@ class Email {
 
 
   async send(subject) {
-    sgMail.setApiKey(process.env.SENDGRID_PASSWORD);
+    sgMail.setApiKey(process.env.SENDGRID_API_KEY);
     const htmlTemplate = fs.readFileSync(
       path.join(__dirname, "../email.html"),
       "utf8"
