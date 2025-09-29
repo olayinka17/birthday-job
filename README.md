@@ -1,0 +1,1 @@
+This repository is a simple reminder app that uses a cron job(node-schedule) to check the database  at exactly 7 o'clock each dayand look for users that they are having their birthdays the particular day.
