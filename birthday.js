@@ -9,16 +9,13 @@ const birthdays = async () => {
 
   try {
     const users = await User.find({ Month: month, Day: day });
-    await Promise.all(
-      users.map((user) => new Email(user).sendEmail())
-    );
+    await Promise.all(users.map((user) => new Email(user).sendEmail()));
   } catch (err) {
     console.log(err);
   }
 };
 
-schedule.scheduleJob('* * * * *', () => {
+schedule.scheduleJob("* * * * *", () => {
   console.log("job starting......");
   birthdays();
 });
-
